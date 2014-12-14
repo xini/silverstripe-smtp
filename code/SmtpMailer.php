@@ -148,12 +148,7 @@ class SmtpMailer extends Mailer {
 	protected function attachFiles($attachedFiles){
 		if(!empty($attachedFiles) && is_array($attachedFiles)){
 			foreach($attachedFiles as $attachedFile){
-				if(substr($attachedFile['filename'], 0, strlen(Director::baseFolder())) === Director::baseFolder()){ // If the file path is already included, don't include it again
-					$filePath = $attachedFile['filename'];
-				} else {
-					$filePath = Director::baseFolder() . DIRECTORY_SEPARATOR . $attachedFile['filename'];
-				}
-				$this->mailer->AddAttachment($filePath);
+				$this->mailer->AddStringAttachment($attachedFile["contents"], $attachedFile["filename"]);
 			}
 		}
 	}
