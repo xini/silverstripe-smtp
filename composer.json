@@ -1,0 +1,13 @@
+{
+	"name": "xeraa/silverstripe-smtp",
+	"description": "Automatically sends emails (e.g. from UserForms) to your provider's or host's SMTP server instead of using PHP's built-in mail() function.",
+	"type": "silverstripe-module",
+	"keywords": ["silverstripe", "email", "smtp"],
+	"authors": [{
+		"name": "Philipp Krenn",
+		"email": "pk@xeraa.net"
+	}],
+	"extra": {
+		"installer-name": "smtp"
+	}
+}
